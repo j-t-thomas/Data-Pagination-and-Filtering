@@ -10,10 +10,9 @@ For assistance:
    Check out the "Project Resources" section of the Instructions tab: https://teamtreehouse.com/projects/data-pagination-and-filtering#instructions
    Reach out in your Slack community: https://treehouse-fsjs-102.slack.com/app_redirect?channel=unit-2
 */
-
+const itemsPerPage = 9;
 // Renders student cards to the page
 function showPage(list, page) {
-   const itemsPerPage = 9;
    const startIndex = (page * itemsPerPage) - itemsPerPage;
    const endIndex = page * itemsPerPage;
    const studentList = document.querySelector('.student-list');
@@ -41,7 +40,7 @@ function showPage(list, page) {
 
 // Renders pagination buttons to the page
 function addPagination(list) {
-   let numPages = Math.ceil(list.length / 9);
+   let numPages = Math.ceil(list.length / itemsPerPage);
    const linkList = document.querySelector('.link-list');
    linkList.innerHTML = '';
    
